@@ -2737,6 +2737,13 @@ in fasl files does not generally make sense.
 %-----------------------------------------------------------------------------
 \section{Bug Fixes}\label{section:bugfixes}
 
+\subsection{Repair R$^5$RS and IEEE environments (10.1.0)}
+
+The environments returned by \scheme{(scheme-report-environment 5)}
+and \scheme{(scheme-ieee-environment)} had some names incorrectly
+prefixed with \scheme{r6rs:}, such as \scheme{r6rs:<} instead of
+\scheme{<}.
+
 \subsection{Non-empty mantissa widths (10.1.0)}
 
 Non-empty mantissa widths are now taken into account.  For example,

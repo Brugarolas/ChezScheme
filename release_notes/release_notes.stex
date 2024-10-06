@@ -124,6 +124,11 @@ iOS compilation target. Native-code support for iOS is currently limited
 to applications attached to a debugger as the platform does not allow
 executable code to be loaded at runtime.
 
+\subsection{Standard boolean foreign type (10.1.0)}
+
+The \scheme{stdbool} foreign type corresponds to \scheme{bool} as
+defined by the host machine's \scheme{stdbool.h} include file.
+
 \subsection{Optimization for \scheme{call/cc} (10.1.0)}
 
 When \scheme{call/cc} is applied to an immediate function that does
@@ -2743,6 +2748,12 @@ in fasl files does not generally make sense.
 
 %-----------------------------------------------------------------------------
 \section{Bug Fixes}\label{section:bugfixes}
+
+
+\subsection{\scheme{quote-syntax} incorrectly applies wrap (10.1.0)}
+
+A bug in \scheme{quote-syntax} that caused \scheme{(identifier? (quote-syntax \var{symbol}))}
+to report the wrong result has been fixed.
 
 \subsection{Repair R$^5$RS and IEEE environments (10.1.0)}
 
